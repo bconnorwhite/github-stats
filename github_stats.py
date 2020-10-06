@@ -157,10 +157,6 @@ class Queries(object):
       }}
       nodes {{
         nameWithOwner
-        stargazers {{
-          totalCount
-        }}
-        forkCount
         languages(first: 10, orderBy: {{field: SIZE, direction: DESC}}) {{
           edges {{
             size
