@@ -40,6 +40,14 @@ of private repositories. If there is an exception caused by `aiohttp`, this
 exception will be viewable in the Actions tab of the repository fork, and
 anyone may be able to see the name of one or more private repositories.
 
+Due to some issues with the GitHub statistics API, there are some situations
+where it returns inaccurate results. Specifically, the repository view count
+statistics and total lines of code modified are probably somewhat inaccurate.
+Unexpectedly, these values will become more accurate over time as GitHub
+caches statistics for your repositories. For more information, see issue
+[#2](https://github.com/jstrieb/github-stats/issues/2) and
+[#3](https://github.com/jstrieb/github-stats/issues/3).
+
 # Installation
 
 <!-- TODO: Add details and screenshots -->
@@ -57,9 +65,13 @@ anyone may be able to see the name of one or more private repositories.
 4. Go to the "Actions" tab of the fork and hit the big green button to enable
    Actions.
 5. Commit a small change to the repo (for example remove a newline from the end
-   of the README) to force it to regenerate the stats images.
+   of the README) to force it to regenerate the stats images. The first time
+   that it generates the stats images, it may take a very long time. It does 
+   not generally take as long as the first time when it runs in the future.
 6. Check out the images that have been created in the `generated` folder.
-5. Star this repo if you like it!
+7. Link back to this repository so that others can generate their own 
+   statistics images.
+8. Star this repo if you like it!
 
 
 # Related Projects
