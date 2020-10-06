@@ -299,7 +299,8 @@ Languages:
                 if name in self._repos:
                     continue
                 self._repos.add(name)
-                self._stargazers += repo.get("stargazers").get("totalCount", 0)
+                if repo.get("stargazers") is not None:
+                    self._stargazers += repo.get("stargazers").get("totalCount", 0)
                 self._forks += repo.get("forkCount", 0)
 
                 if name in self._exclude_repos:
